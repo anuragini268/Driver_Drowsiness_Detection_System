@@ -21,3 +21,29 @@ pip install -r requirements.txt
 ## Run
 
 python src/main.py
+
+
+
+# Driver Drowsiness Detection System
+
+## Overview
+
+## Features
+
+## Technologies Used
+
+## Project Structure
+
+## Installation
+
+## Usage
+
+## Workflow
+
+## Results
+
+## Future Scope
+
+## Contributors
+
+## License
