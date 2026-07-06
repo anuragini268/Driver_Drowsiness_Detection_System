@@ -17,8 +17,6 @@ def get_head_pose(face_landmarks, width, height):
     forehead = face_landmarks.landmark[FOREHEAD]
 
     nose_x = nose.x * width
-    nose_y = nose.y * height
-
     left_x = left.x * width
     right_x = right.x * width
 
@@ -27,26 +25,23 @@ def get_head_pose(face_landmarks, width, height):
 
     face_center_x = (left_x + right_x) / 2
 
-    # -------------------------
     # LEFT / RIGHT
-    # -------------------------
     horizontal_offset = nose_x - face_center_x
 
-    if horizontal_offset < -20:
+    if horizontal_offset < -30:
         return "Left"
 
-    elif horizontal_offset > 20:
+    elif horizontal_offset > 30:
         return "Right"
 
-    # -------------------------
     # UP / DOWN
-    # -------------------------
     face_height = chin_y - forehead_y
 
-    if face_height < 140:
+    # Relaxed thresholds
+    if face_height < 120:
         return "Up"
 
-    elif face_height > 220:
+    elif face_height > 260:
         return "Down"
 
     return "Forward"
